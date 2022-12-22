@@ -9,8 +9,10 @@
   	$username = $_POST["username"];
   	//$email = $_POST['email'];
   	$userPassword = $_POST["userPassword"];
-  	$confirmPassword = $_POST["confirmPassword"];
-	$account_role = $_POST["account_role"];
+	$confirmPassword = $_POST["confirmPassword"];
+    $hash = password_hash($userPassword, PASSWORD_DEFAULT);
+	$chash = password_hash($confirmPassword, PASSWORD_DEFAULT);
+  	$account_role = $_POST["account_role"];
 	$pin = $_POST["pin"];
     
 	// username and emial validation
@@ -51,17 +53,20 @@
       $lowercase = preg_match('@[a-z]@', $userPassword);
       $number    = preg_match('@[0-9]@', $userPassword);
       $specialChars = preg_match('@[^\w]@', $userPassword);
-      
+      $passwordValidated = $uppercase && $lowercase && $number && $specialChars;
      
 	  if (mysqli_num_rows($res_u)) { 
 		
   	  $name_error = "Sorry... username already taken"; 	
 	  }
 	
+	  if($passwordValidated){
+		$password_error = "You Finally Got It";
+	}
 	
 	
-	   if($userPassword == md5($userPassword)){
-		 $confirmPassword = "Test";
+	   if(empty(!$userPassword) ){
+		
 	   }else if ($passwords_do_not_match) {
 		$confirmPassword_error = "The passwords must match";
 	} else if ($password_length_invalid) {
@@ -70,15 +75,9 @@
 		$pin_error = "Pin must be a minimum of 6 characters";
 	} else if ($pinLengthLong) {
 		$pin_error = "Pin can't be more than 4 characters in length";
-	}  else if (!$uppercase || !$lowercase ||!$number || !$specialChars || strlen($userPassword) < 6) {
-		$confirmPassword_error = 'Password should be at least 6 characters in length and should include at least one upper case letter, one number, and one special character.';
-
-	} else if ($uppercase >= 1 && $lowercase >= 1  && $number >= 1  && $specialChars >=1 && strlen($userPassword)){
-		      $password_error = "Success";
-	} 
-	
-	
-	else {
+	}  else if($passwordValidated){
+		$confirmPassword_error = "Password must be alphanumeric";
+	} else{
 		$query = "INSERT INTO register (username, userPassword, confirmPassword, pin, account_role,dateJoined) 
 		VALUES ('$username', '".md5($userPassword)."','".md5($confirmPassword)."','$pin','$account_role', '$date_time')";
         $results = mysqli_query($db, $query);
@@ -87,7 +86,12 @@
 
   	}
 	}
+	
 
+
+	
+	
+  
 
 	
   
