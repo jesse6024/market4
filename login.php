@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -25,16 +28,25 @@
             $userPassword = md5($userPassword);
             $query = "SELECT * FROM register WHERE username= '$username' AND userPassword = '$userPassword'";
             $result = mysqli_query($connect, $query);
-            
+
 
             if (mysqli_num_rows($result) > 0) {
                 $_SESSION['username'] = $username;
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $_SESSION['dateJoined'] = $row['dateJoined'];
+                    $_SESSION['account_role'] = $row['account_role'];
+
+
+                    $_SESSION['trust_level'] = 'Level ' . $row['trust_level'];
+                }
+
                 header("Location: dashboard.php");
                 echo '<script>alert("Login Successful")</script>';
-                
             } else {
-                echo '<script>alert("Wrong user details")</script>';
+                echo '<script>alert("Username or Password is incorrect")</script>';
             }
+
+            mysqli_close($connect);
         }
     }
     /*
@@ -79,7 +91,14 @@ if(!empty($_POST['submit'])){
 ">
             <h1>Log In</h1>
             <form method="post">
-                <input type="text" name="username" placeholder="Username" required />
+                <input type="text" name="username" placeholder="Username" required style="    width: 200px;
+    border-radius: 2px;
+    border: 1px solid #CCC;
+    padding: 10px;
+    color: #333;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center" />
                 <input type="password" name="userPassword" placeholder="Password" required />
 
                 <input name="login" type="submit" value="Login" />

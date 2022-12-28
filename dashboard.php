@@ -1,3 +1,7 @@
+<?php 
+//session_start();
+include('auth.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,6 +9,9 @@
 <title>Dashboard - Secured Page</title>
 <link rel="stylesheet" href="style.css" />
 <link rel="stylesheet" href="password-strength-indicator.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 <div class="container" style="    
@@ -14,8 +21,24 @@
     height: 20%;
     border-radius: 5px;
     box-shadow: 0 0 15px rgb(0 0 0 / 20%);">
+  
+
         <h1>REUP MARKET</h1>
         <h5>Dashboard</h5>
+        <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="dashboard.php">REUP MARKET</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Page 1</a></li>
+      <li><a href="#">Page 2</a></li>
+      <li><a href="logout.php">Log Out</a></li>
+    </ul>
+  </div>
+</nav>
+  
 </div>
 <header></header>
  <div class="" style= " 
@@ -34,9 +57,15 @@
     box-shadow: 0 0 15px rgb(0 0 0 / 20%);
 ">
 <h2>DASHBOARD</h2> 
-<div class="form" style="border:none;">
-<p>Dashboard</p>
+<div class="form" style="border:none; position:absolute; top:-32%;">
+<p>Profile</p>
+<img src="default-profile-pic.jfif" ><br>
+<?php echo "Username: " . $_SESSION["username"] . "<br>"; ?>
+<?php echo "Date Joined: " . $_SESSION["dateJoined"] . "<br>"; ?>
+<?php echo "Account Role: " . $_SESSION["account_role"] . "<br>"; ?>
+<?php echo "Trust Level: " . $_SESSION["trust_level"] . "<br>"; ?>
 <p>This is another secured page.</p>
+<a href="landing_page.php">Landing Page</a>
 <a href="logout.php">Logout</a>
 
 </div>
