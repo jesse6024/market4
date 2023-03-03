@@ -1,14 +1,21 @@
 <?php
 session_start();
 //include('auth.php');
-?>
+$account_role = $_SESSION["account_role"];
 
+if($_SESSION["account_role"] == "Buyer"){
+  header("Location: vendor-non-approved.php");
+}
+
+           
+    
+    ?>
 <!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="utf-8">
-  <title>Homepage</title>
+  <title>Vendor</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="password-strength-indicator.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -34,8 +41,8 @@ session_start();
           <a class="navbar-brand" href="homepage.php">REUP MARKET</a>
         </div>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="homepage.php">Home</a></li>
-          <li><a href="vendor.php">Vendor</a></li>
+          <li><a href="homepage.php">Home</a></li>
+          <li class="active"><a href="vendor.php">Vendor</a></li>
           <li><a href="pm_check.php">Messages</a></li>
           <li><a href="chat-index-page.php">Chat</a></li>
           <li><a href="logout.php">Log Out</a></li>
@@ -50,20 +57,23 @@ session_start();
   </div>
   <header></header>
 
-  <div id="row-1" style="width: 100%; display: flex; flex-direction: row; justify-content: center; margin-top: 60px;">
+  <div id="row-1" style="width: 100%; /* display: flex; */ flex-direction: row; justify-content: center; margin-top: 60px;">
 
     <div class="user-profile" style=" 
     border: none;
     height: auto;
     width: 300px;
-    display: flex;
-    flex-direction: column;
+    /*display: flex;*/
+    /*flex-direction: column;*/
     justify-content: center;
     background: #fff;
     border-radius: 5px;
     box-shadow: 0 0 15px rgb(0 0 0 / 20%);
     padding-bottom: 30px;
     margin-right: 40px;
+    position: absolute;
+    margin-left: 250px;
+
 ">
       <!--<h2>DASHBOARD</h2>-->
       <div class="form" style="border: none;">
@@ -139,7 +149,7 @@ session_start();
       </div>
 
     </div>
-
+    <!--
     <div id="news" style="
     border: none;
     height: auto;
@@ -162,8 +172,8 @@ session_start();
         
     
       
-    </div>
-
+    </div>-->
+     <!--
     <div id="search" style="
     border: none;
     height: auto;
@@ -180,7 +190,7 @@ session_start();
     </div>
 
 
-  </div>
+  </div>-->
 
   <div id="row-2" style="width: 100%; display: flex; flex-direction: row; justify-content: center; margin-top: 40px;">
 
@@ -199,6 +209,7 @@ session_start();
       padding-bottom: 30px;
       margin-right: 40px;
       margin-bottom: 40px;
+      margin-top:350px;
       ">
         <h3>Catagories
           <br>
@@ -257,6 +268,8 @@ session_start();
       padding-bottom: 30px;
       margin-right: 40px;
       margin-bottom: 40px;
+      position: absolute;
+      margin-top: 927px;
       ">
         <h3>Statistics</h3>
       </div>
@@ -272,6 +285,10 @@ session_start();
       padding-top: 30px;
       padding-bottom: 30px;
       margin-right: 40px;
+      position: absolute;
+      margin-top: 900px;
+      position: absolute;
+      margin-top: 1200px;
       ">
         <h3>Exchange rates</br></br</br></h3>
        <?php include("bitcoin-ticker.php"); ?>
@@ -295,10 +312,10 @@ session_start();
   ">
         <h2>Welcome <?php echo $_SESSION["username"]; ?></h2>
         <br>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mus mauris vitae ultricies leo integer. Semper quis lectus nulla at volutpat diam ut. Et odio pellentesque diam volutpat commodo sed egestas egestas. Tortor id aliquet lectus proin nibh nisl. Iaculis eu non diam phasellus vestibulum lorem sed.</p><br><p>Ut morbi tincidunt augue interdum velit euismod in. Egestas erat imperdiet sed euismod nisi porta lorem mollis. Enim nulla aliquet porttitor lacus luctus accumsan tortor posuere ac. Enim eu turpis egestas pretium aenean pharetra magna ac placerat. Vitae sapien pellentesque habitant morbi tristique senectus. Leo integer malesuada nunc vel risus commodo viverra maecenas. Fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis. Et netus et malesuada fames ac turpis. Neque volutpat ac tincidunt vitae semper quis.</p>
+        <p>You have successfully been approved for being a vendor  click "Dashobard" to update store <a href="admin-dashboard.php"> Dashboard </a> 
       </div>
 
-      <div class="feature-listings" style="
+      <!--<div class="feature-listings" style="
   border: none;
   height: auto;
   width: 1045px;
@@ -333,11 +350,12 @@ session_start();
 
     </div>
 
-  </div>
-
+  </div>-->
+  <div class="flex-wrapper"></div>
   <div id="footer" style="height: 200px; width: 100%; position: relative; bottom: 0; background-color: #e0e0e0; margin-top: 40px; text-align: left; padding: 50px;">
-    <a href="#">Home</a>
+    <a href="#">Home</a></div>
   </div>
 </body>
 
 </html>
+            

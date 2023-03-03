@@ -8,7 +8,7 @@ session_start();
 
 <head>
   <meta charset="utf-8">
-  <title>Homepage</title>
+  <title>Admin Homepage</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="password-strength-indicator.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -25,29 +25,29 @@ session_start();
     box-shadow: 0 0 15px rgb(0 0 0 / 20%);">
 
 
-    <h1>REUP MARKET</h1>
+<h1>REUP MARKET</h1>
    
-    <!--<h5>Dashboard</h5>-->
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="homepage.php">REUP MARKET</a>
-        </div>
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="homepage.php">Home</a></li>
-          <li><a href="vendor.php">Vendor</a></li>
-          <li><a href="pm_check.php">Messages</a></li>
-          <li><a href="chat-index-page.php">Chat</a></li>
-          <li><a href="logout.php">Log Out</a></li>
-        </ul>
-        <div style="">
-          <?php include("bitcoin-ticker.php"); ?>
+   <!--<h5>Dashboard</h5>-->
+   <nav class="navbar navbar-default">
+     <div class="container-fluid">
+       <div class="navbar-header">
+         <a class="navbar-brand" href="homepage.php">REUP MARKET</a>
+       </div>
+       <ul class="nav navbar-nav">
+         <li class="active"><a href="#">Home</a></li>
+         <li><a href="vendor.php">Vendor</a></li>
+         <li><a href="pm_check.php">Messages</a></li>
+         <li><a href="chat-index-page.php">Chat</a></li>
+         <li><a href="logout.php">Log Out</a></li>
+       </ul>
+       <div style="">
+         <?php include("bitcoin-ticker.php"); ?>
 
-        </div>
-      </div>
-    </nav>
+       </div>
+     </div>
+   </nav>
 
-  </div>
+ </div>
   <header></header>
 
   <div id="row-1" style="width: 100%; display: flex; flex-direction: row; justify-content: center; margin-top: 60px;">
@@ -225,7 +225,7 @@ session_start();
   <li></li>
   <li><b>➤<a href="listing_category?id=151" class="nav-link"> Digital Items <span class="badge badge-secondary float-right">1817</span></a></b></li>
   <li></li>
-  <li style="margin-left:-1.5px;"><b>➤<a href="listing_category?id=158" class="nav-link"> Websites &amp; Graphic Design <span class="badge badge-secondary float-right">19</span></a></b></li>
+  <li style="margin-left:-1.5px"><b>➤<a href="listing_category?id=158" class="nav-link"> Websites &amp; Graphic Design <span class="badge badge-secondary float-right">19</span></a></b></li>
   <li></li>
   <li><b>➤<a href="listing_category?id=165" class="nav-link"> Jewels &amp; Precious Metals <span class="badge badge-secondary float-right">25</span></a></b></li><li>
 </li>

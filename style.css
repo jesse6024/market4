@@ -1,10 +1,5 @@
 .login-head-container{
-    border: solid 1px black;
-    width: 60%;
-    height: 20%;
-    margin-left: 20%;
-    text-align: center;
-    margin-top: 2%;
+   
 
 }
 
@@ -20,6 +15,14 @@ body{
     overflow-x:hidden;
     
 }
+
+.flex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 
 .login-form-container{
     border: solid 1px black;

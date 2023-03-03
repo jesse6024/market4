@@ -1,12 +1,12 @@
 <?php 
-//session_start();
-include('auth.php');
+session_start();
+//include('auth.php');
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>Dashboard - Secured Page</title>
+<title>Homepage - Secured Page</title>
 <link rel="stylesheet" href="style.css" />
 <link rel="stylesheet" href="password-strength-indicator.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -24,7 +24,7 @@ include('auth.php');
   
 
         <h1>REUP MARKET</h1>
-        <h5>Dashboard</h5>
+        <!--<h5>Dashboard</h5>-->
         <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -32,7 +32,7 @@ include('auth.php');
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Page 1</a></li>
+      <li><a href="landing_page.php">Secured Page</a></li>
       <li><a href="#">Page 2</a></li>
       <li><a href="logout.php">Log Out</a></li>
     </ul>
@@ -56,7 +56,7 @@ include('auth.php');
     border-radius: 5px;
     box-shadow: 0 0 15px rgb(0 0 0 / 20%);
 ">
-<h2>DASHBOARD</h2> 
+<!--<h2>DASHBOARD</h2>--> 
 <div class="form" style="border:none; position:absolute; top:-32%;">
 <p>Profile</p>
 <img src="default-profile-pic.jfif" ><br>

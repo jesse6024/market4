@@ -1,8 +1,10 @@
 <?php
 session_start();
 //include('auth.php');
-?>
-
+date_default_timezone_set('Asia/Kolkata');
+	$timestamp = time();
+	$date_time = date("Y-m-d H:i:s");
+  ?>
 <!DOCTYPE html>
 <html>
 
@@ -34,13 +36,12 @@ session_start();
           <a class="navbar-brand" href="homepage.php">REUP MARKET</a>
         </div>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="homepage.php">Home</a></li>
+          <li class="active"><a href="#">Home</a></li>
+          <!--<li><a href="landing_page.php">Secured Page</a></li>-->
           <li><a href="vendor.php">Vendor</a></li>
-          <li><a href="pm_check.php">Messages</a></li>
-          <li><a href="chat-index-page.php">Chat</a></li>
           <li><a href="logout.php">Log Out</a></li>
         </ul>
-        <div style="">
+        <div>
           <?php include("bitcoin-ticker.php"); ?>
 
         </div>
@@ -75,8 +76,8 @@ session_start();
 
           <?php echo "Username: " . $_SESSION["username"] . "<br>"; ?>
           <?php echo "Date Joined: " . $_SESSION["dateJoined"] . "<br>"; ?>
+          <?php echo "Last Login: " .$date_time. "<br>"; ?>
           <?php echo "Account Role: " . $_SESSION["account_role"] . "<br>"; ?>
-  
           <div style="display: flex; align-items: center; justify-content: center">
             <?php echo "Trust Level: " ?>
             <div style="
@@ -187,18 +188,18 @@ session_start();
     <div class="column-1" style="display: flex; flex-direction: column;">
 
       <div id="catagories" style="
-      border: none;
-      height: auto;
-      width: 300px;
-      display: flex;
-      justify-content: center;
-      background: #fff;
-      border-radius: 5px;
-      box-shadow: 0 0 15px rgb(0 0 0 / 20%);
-      padding-top: 30px;
-      padding-bottom: 30px;
-      margin-right: 40px;
-      margin-bottom: 40px;
+          border: none;
+    height: auto;
+    width: 317px;
+    display: flex;
+    justify-content: center;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgb(0 0 0 / 20%);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-right: 40px;
+    margin-bottom: 40px;
       ">
         <h3>Catagories
           <br>
@@ -225,7 +226,7 @@ session_start();
   <li></li>
   <li><b>➤<a href="listing_category?id=151" class="nav-link"> Digital Items <span class="badge badge-secondary float-right">1817</span></a></b></li>
   <li></li>
-  <li style="margin-left:-1.5px;"><b>➤<a href="listing_category?id=158" class="nav-link"> Websites &amp; Graphic Design <span class="badge badge-secondary float-right">19</span></a></b></li>
+  <li><b>➤<a href="listing_category?id=158" class="nav-link"style="margin-left:-6px;"> Websites &amp; Graphic Design <span class="badge badge-secondary float-right">19</span></a></b></li>
   <li></li>
   <li><b>➤<a href="listing_category?id=165" class="nav-link"> Jewels &amp; Precious Metals <span class="badge badge-secondary float-right">25</span></a></b></li><li>
 </li>
@@ -295,7 +296,7 @@ session_start();
   ">
         <h2>Welcome <?php echo $_SESSION["username"]; ?></h2>
         <br>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mus mauris vitae ultricies leo integer. Semper quis lectus nulla at volutpat diam ut. Et odio pellentesque diam volutpat commodo sed egestas egestas. Tortor id aliquet lectus proin nibh nisl. Iaculis eu non diam phasellus vestibulum lorem sed.</p><br><p>Ut morbi tincidunt augue interdum velit euismod in. Egestas erat imperdiet sed euismod nisi porta lorem mollis. Enim nulla aliquet porttitor lacus luctus accumsan tortor posuere ac. Enim eu turpis egestas pretium aenean pharetra magna ac placerat. Vitae sapien pellentesque habitant morbi tristique senectus. Leo integer malesuada nunc vel risus commodo viverra maecenas. Fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis. Et netus et malesuada fames ac turpis. Neque volutpat ac tincidunt vitae semper quis.</p>
+        <p>Semper quis lectus nulla at volutpat diam ut. Et odio pellentesque diam volutpat commodo sed egestas egestas. Tortor id aliquet lectus proin nibh nisl. Iaculis eu non diam phasellus vestibulum lorem sed.</p><br><p>Ut morbi tincidunt augue interdum velit euismod in. Egestas erat imperdiet sed euismod nisi porta lorem mollis. Enim nulla aliquet porttitor lacus luctus accumsan tortor posuere ac. Enim eu turpis egestas pretium aenean pharetra magna ac placerat. Vitae sapien pellentesque habitant morbi tristique senectus. Leo integer malesuada nunc vel risus commodo viverra maecenas. Fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis. Et netus et malesuada fames ac turpis. Neque volutpat ac tincidunt vitae semper quis.</p>
       </div>
 
       <div class="feature-listings" style="
@@ -338,6 +339,4 @@ session_start();
   <div id="footer" style="height: 200px; width: 100%; position: relative; bottom: 0; background-color: #e0e0e0; margin-top: 40px; text-align: left; padding: 50px;">
     <a href="#">Home</a>
   </div>
-</body>
-
-</html>
+  </html> <??>

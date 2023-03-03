@@ -34,7 +34,7 @@ session_start();
           <a class="navbar-brand" href="homepage.php">REUP MARKET</a>
         </div>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="homepage.php">Home</a></li>
+          <li class="active"><a href="#">Home</a></li>
           <li><a href="vendor.php">Vendor</a></li>
           <li><a href="pm_check.php">Messages</a></li>
           <li><a href="chat-index-page.php">Chat</a></li>

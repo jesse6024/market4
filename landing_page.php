@@ -46,11 +46,11 @@ include("auth.php");
 <!--<div class="form">-->
 <p>Welcome <?php echo $_SESSION['username']; ?>!</p>
 </br>
-<a href="dashboard.php">Dashboard</a>
+<a href="homepage.php">Home</a>
 <?php
 // Initialize the session.
 // If you are using session_name("something"), don't forget it now!
-
+/*
 // Unset all of the session variables.
 $_SESSION = array();
 
@@ -66,9 +66,9 @@ if (ini_get("session.use_cookies")) {
 
 
 
-
+*/
 ?>
-<p><a href="login.php">Logout</a></p>
+<p><a href="logout.php">Logout</a></p>
 
 
 </form>

@@ -1,0 +1,17 @@
+.textArea {
+    width: 490px;
+    margin:0;
+    height:8em;
+    padding:0;
+    color:blue;
+  }
+  .commentDiv {
+    width:500px;
+    padding:5px;
+  }
+  
+  .button {
+    width:80px;
+    margin: 0 10px;
+    float:right;
+  }

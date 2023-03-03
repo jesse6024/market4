@@ -2,7 +2,6 @@
 session_start();
 //include('auth.php');
 ?>
-
 <!DOCTYPE html>
 <html>
 
@@ -34,8 +33,8 @@ session_start();
           <a class="navbar-brand" href="homepage.php">REUP MARKET</a>
         </div>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="homepage.php">Home</a></li>
-          <li><a href="vendor.php">Vendor</a></li>
+          <li><a href="homepage.php">Home</a></li>
+          <li class="active"><a href="vendor.php">Vendor</a></li>
           <li><a href="pm_check.php">Messages</a></li>
           <li><a href="chat-index-page.php">Chat</a></li>
           <li><a href="logout.php">Log Out</a></li>
@@ -56,7 +55,7 @@ session_start();
     border: none;
     height: auto;
     width: 300px;
-    display: flex;
+    /*display: flex;*/
     flex-direction: column;
     justify-content: center;
     background: #fff;
@@ -225,7 +224,7 @@ session_start();
   <li></li>
   <li><b>➤<a href="listing_category?id=151" class="nav-link"> Digital Items <span class="badge badge-secondary float-right">1817</span></a></b></li>
   <li></li>
-  <li style="margin-left:-1.5px;"><b>➤<a href="listing_category?id=158" class="nav-link"> Websites &amp; Graphic Design <span class="badge badge-secondary float-right">19</span></a></b></li>
+  <li style="margin-left:-2px";><b>➤<a href="listing_category?id=158" class="nav-link"> Websites &amp; Graphic Design <span class="badge badge-secondary float-right">19</span></a></b></li>
   <li></li>
   <li><b>➤<a href="listing_category?id=165" class="nav-link"> Jewels &amp; Precious Metals <span class="badge badge-secondary float-right">25</span></a></b></li><li>
 </li>
@@ -295,7 +294,7 @@ session_start();
   ">
         <h2>Welcome <?php echo $_SESSION["username"]; ?></h2>
         <br>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mus mauris vitae ultricies leo integer. Semper quis lectus nulla at volutpat diam ut. Et odio pellentesque diam volutpat commodo sed egestas egestas. Tortor id aliquet lectus proin nibh nisl. Iaculis eu non diam phasellus vestibulum lorem sed.</p><br><p>Ut morbi tincidunt augue interdum velit euismod in. Egestas erat imperdiet sed euismod nisi porta lorem mollis. Enim nulla aliquet porttitor lacus luctus accumsan tortor posuere ac. Enim eu turpis egestas pretium aenean pharetra magna ac placerat. Vitae sapien pellentesque habitant morbi tristique senectus. Leo integer malesuada nunc vel risus commodo viverra maecenas. Fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis. Et netus et malesuada fames ac turpis. Neque volutpat ac tincidunt vitae semper quis.</p>
+        <p>You have not been approved for vendor account. Please register as vendor <a href="register.php">Register</a></p>
       </div>
 
       <div class="feature-listings" style="
